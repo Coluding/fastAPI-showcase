@@ -5,7 +5,7 @@ from app.routers import user, post, auth, vote
 from pydantic import BaseSettings
 from app import config
 
-#   Base.metadata.create_all(bind=engine)
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
