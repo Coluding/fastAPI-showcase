@@ -6,7 +6,8 @@ from app.config import settings
 SQL_URL = "postgresql://<username>:>password>@<ip-address/hostname>/<database_name>"
 
 SQL_URL = "postgresql://postgres:Kripossi90!@localhost/fastapi" #Use env variables!!
-SQL_URL = settings.database_url
+SQL_URL = f"postgresql://{settings.database_username}:{settings.database_password}@{settings.database_hostname}:" \
+          f"{settings.database_port}/{settings.database_name}"
 
 engine = create_engine(SQL_URL)
 
