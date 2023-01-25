@@ -20,6 +20,11 @@ app.add_middleware(CORSMiddleware,
                    allow_methods=["*"], # which http methods are allowed
                    allow_headers=["*"]) # which headers are allowed
 
+
+@app.get("/")
+def start_response():
+    return {"hello":"world"}
+
 app.include_router(post.router)
 app.include_router(user.router)
 app.include_router(auth.router)
